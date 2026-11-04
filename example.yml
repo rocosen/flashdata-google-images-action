@@ -1,4 +1,4 @@
-name: Google Images Inventory - FlashData
+name: Google Images Search
 on:
   workflow_dispatch: {}
 permissions:
@@ -7,15 +7,14 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     steps:
-      - name: Build an image-reference inventory with source URLs and reported
-          dimensions for manual review.
+      - name: Google Images Search
         id: data
-        uses: rocosen/flashdata-google-images-action@v0.1.0
+        uses: rocosen/flashdata-google-images-action@v0.1.1
         with:
           api-key: ${{ secrets.FLASHDATA_API_KEY }}
           query: rooftop solar installation
           options-json: '{"num":5}'
-      - name: Save data for the next pipeline stage
+      - name: Upload results
         uses: actions/upload-artifact@v4
         with:
           name: google-images

@@ -1,6 +1,6 @@
-name: Google Images Inventory - FlashData
-description: Build an image-reference inventory with source URLs and reported
-  dimensions for manual review.
+name: Google Images Search
+description: Search Google Images and export image URLs, thumbnails and
+  available dimensions as JSON and JSONL.
 author: FlashData
 branding:
   icon: search
